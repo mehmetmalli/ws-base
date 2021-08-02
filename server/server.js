@@ -6,10 +6,11 @@ const [PORT, ENDPOINT] = [3000, "/websocket"];
 app.ws(ENDPOINT, (ws, req) => {
     ws.on('message', (msg) => {
         const now = new Date();
-        if (!ws.client) { ws.client = client; }
         const { datetime: then, client } = JSON.parse(msg);
-
-        console.log(`From ${client}: ${now - new Date(then)}ms`);
+        if (!ws.client) { ws.client = client; }
+        const diff = now - new Date(then);
+        console.log(`From ${client}: ${diff}ms`);
+        ws.send(JSON.stringify(diff));
     })
     
     ws.on('close', () => {

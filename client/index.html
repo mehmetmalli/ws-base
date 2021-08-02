@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,16 +11,29 @@
             text-align: center;
             background-color: black;
         }
-        
-        #info {
+
+        .wrapper {
             margin-top: 50vh;
             transform: translateY(-50%);
+        }
+
+        #info {
             color: salmon;
+        }
+
+        #ping {
+            color: turquoise;
         }
     </style>
 </head>
+
 <body>
-    <h1 id="info">No data has been sent yet.</h1>
+    <div class="wrapper">
+        <h1 id="info">No data has been sent yet.</h1>
+        <h1 id="ping">No data has been sent yet.</h1>
+    </div>
+
     <script src='./client.js'></script>
 </body>
+
 </html>
